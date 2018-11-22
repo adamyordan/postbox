@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package postbox;
+
+message Letter {
+    uint64 ID = 1;
+    string value = 2;
+    string ipaddr = 3;
+    int64 time = 4;
+}
