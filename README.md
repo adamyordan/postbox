@@ -26,19 +26,19 @@ Usage
     ```
     $ postbox letter list
     
-    [1] 2018-11-22 18:33:18 +0800 +08 ([::1]:53311)
+    [1] 2018-11-22 18:33:18 +0800 +08 (127.0.0.1:53311)
     ```
     
 - View details of http request received
     ```
-    $ postbox letter view 4
+    $ postbox letter view 1
 
-    id    : 4
+    id    : 1
     ipaddr: 127.0.0.1:53311
     time  : 2018-11-22 18:33:18 +0800 +08
     
     PUT / HTTP/1.1
-    Host: localhost:8000
+    Host: 127.0.0.1:8000
     Accept: */*
     Content-Length: 22
     Content-Type: application/x-www-form-urlencoded
