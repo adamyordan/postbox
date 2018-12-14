@@ -2,7 +2,7 @@ Postbox
 ===
 > A standalone cli-based http request dumper written in go
 
-![](demo.gif)
+<p align="center"><img src="/demo.gif?raw=true"/></p>
 
 Installation
 ---
