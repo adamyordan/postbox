@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"github.com/adamyordan/postbox/daemon"
 	"github.com/adamyordan/postbox/postbox"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -44,7 +43,7 @@ func init() {
 
 func up(isDaemon bool, addr string) {
 	if isDaemon {
-		daemon.StartDaemon(func() error {
+		postbox.StartDaemon(func() error {
 			return postbox.ServeHttp(addr)
 		})
 	} else {
@@ -53,5 +52,5 @@ func up(isDaemon bool, addr string) {
 }
 
 func down() {
-	daemon.StopDaemon()
+	postbox.StopDaemon()
 }

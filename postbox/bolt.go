@@ -2,6 +2,7 @@ package postbox
 
 import (
 	"github.com/boltdb/bolt"
+	"path"
 	"time"
 )
 
@@ -38,4 +39,9 @@ func (c *BoltClient) Close() error {
 	return nil
 }
 
-var boltClient = NewBoltClient("postbox.db")
+func defaultBoltClient() *BoltClient {
+	return NewBoltClient(path.Join(getPostboxDir(), "postbox.db"))
+}
+
+var boltClient = defaultBoltClient()
+

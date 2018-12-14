@@ -1,7 +1,8 @@
 Postbox
 ===
-A standalone cli-based http request dumper written in go
+> A standalone cli-based http request dumper written in go
 
+![](demo.gif)
 
 Installation
 ---
@@ -18,8 +19,7 @@ Usage
     
 - Try sending request to port 8000
     ```
-    $ curl -X PUT -H "Custom-Header: header-value" --data "this is http body data" 127.0.0.1:8000
-    
+    $ curl -X PUT -H "Custom-Header: header-value" --data "this is http body data" http://127.0.0.1:8000/some-path
     ```
 
 - List http request received on port 8000
@@ -37,7 +37,7 @@ Usage
     ipaddr: 127.0.0.1:53311
     time  : 2018-11-22 18:33:18 +0800 +08
     
-    PUT / HTTP/1.1
+    PUT /some-path HTTP/1.1
     Host: 127.0.0.1:8000
     Accept: */*
     Content-Length: 22

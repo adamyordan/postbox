@@ -1,19 +1,20 @@
-package daemon
+package postbox
 
 import (
 	"github.com/sevlyar/go-daemon"
 	log "github.com/sirupsen/logrus"
 	"os"
+	"path"
 	"syscall"
 )
 
 func getContext() *daemon.Context {
 	return &daemon.Context{
-		PidFileName: "postbox.pid",
+		PidFileName: path.Join(getPostboxDir(), "postbox.pid"),
 		PidFilePerm: 0644,
-		LogFileName: "postbox.log",
+		LogFileName: path.Join(getPostboxDir(), "postbox.log"),
 		LogFilePerm: 0640,
-		WorkDir: "./",
+		WorkDir: getPostboxDir(),
 		Umask: 027,
 	}
 }
